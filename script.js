@@ -24,19 +24,21 @@ const bar = svg.selectAll("g")
 bar.append("rect")
     .attr("width", 0) // Start with width 0 for transition
     .attr("height", barHeight)
+    .attr("fill", "darkcyan") // Changed fill color
     .transition()
     .duration(1000)
     .attr("width", d => x(d));
 
 bar.append("text")
-    .attr("x", d => x(d) - 3)
+    .attr("x", d => x(d) - 10) // Add margin by subtracting 10
     .attr("y", barHeight / 2)
     .attr("dy", ".35em")
     .text(d => d);
 
 bar.on("mouseover", function(event, d) {
-    d3.select(this).select("rect").attr("fill", "orange");
+    d3.select(this).select("rect").attr("fill", "darkorange"); // Changed hover color
 })
 .on("mouseout", function(event, d) {
-    d3.select(this).select("rect").attr("fill", "150, 127, 241");
+    d3.select(this).select("rect").attr("fill", "darkcyan"); // Changed back to original color
 });
+
