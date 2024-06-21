@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Bar Chart</title>
+    <title>Dynamic Bar Chart with D3.js</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .bar text {
+            fill: white;
+            font: 10px sans-serif;
+            text-anchor: end;
+        }
+        .bar rect {
+            fill: thistle;
+        }
+    </style>
 </head>
 <body>
     <svg id="chart"></svg>

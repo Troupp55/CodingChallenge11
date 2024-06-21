@@ -18,7 +18,8 @@ const x = d3.scaleLinear()
 const bar = svg.selectAll("g")
     .data(data)
   .enter().append("g")
-    .attr("transform", (d, i) => `translate(0,${i * (barHeight + 1)})`);
+    .attr("transform", (d, i) => `translate(0,${i * (barHeight + 1)})`)
+    .attr("class", "bar");
 
 bar.append("rect")
     .attr("width", 0) // Start with width 0 for transition
@@ -34,9 +35,8 @@ bar.append("text")
     .text(d => d);
 
 bar.on("mouseover", function(event, d) {
-    d3.select(this).select("rect").attr("fill", "orange");
+    d3.select(this).select("rect").attr("fill", "purple");
 })
 .on("mouseout", function(event, d) {
-    d3.select(this).select("rect").attr("fill", "steelblue");
+    d3.select(this).select("rect").attr("fill", "thistle");
 });
-
