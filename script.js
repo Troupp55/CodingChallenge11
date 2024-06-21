@@ -10,7 +10,17 @@ const svg = d3.select("#chart")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
-    
+
     const x = d3.scaleLinear()
     .domain([0, d3.max(data)])
     .range([50, width]);
+    
+    const bar = svg.selectAll("g")
+    .data(data)
+  .enter().append("g")
+    .attr("transform", (d, i) => `translate(0,${i * (barHeight + 1)})`);
+
+bar.append("rect")
+    .attr("width", d => x(d))
+    .attr("height", barHeight);
+
