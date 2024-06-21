@@ -16,10 +16,9 @@ const x = d3.scaleLinear()
     .domain([0, d3.max(data)])
     .range([50, width]);
 
-const bar = svg.selectAll(".bar")
+const bar = svg.selectAll("g")
     .data(data)
   .enter().append("g")
-    .attr("class", "bar")
     .attr("transform", (d, i) => `translate(0,${i * (barHeight + 1)})`);
 
 bar.append("rect")
@@ -41,4 +40,3 @@ bar.on("mouseover", function(event, d) {
 .on("mouseout", function(event, d) {
     d3.select(this).select("rect").attr("fill", "steelblue");
 });
-
