@@ -15,11 +15,11 @@ const x = d3.scaleLinear()
     .domain([0, d3.max(data)])
     .range([50, width]);
 
-const bar = svg.selectAll("g")
+const bar = svg.selectAll(".bar")
     .data(data)
   .enter().append("g")
-    .attr("transform", (d, i) => `translate(0,${i * (barHeight + 1)})`)
-    .attr("class", "bar");
+    .attr("class", "bar")
+    .attr("transform", (d, i) => `translate(0,${i * (barHeight + 1)})`);
 
 bar.append("rect")
     .attr("width", 0) // Start with width 0 for transition
