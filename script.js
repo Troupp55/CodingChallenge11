@@ -10,3 +10,7 @@ const svg = d3.select("#chart")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
+    
+    const x = d3.scaleLinear()
+    .domain([0, d3.max(data)])
+    .range([50, width]);
