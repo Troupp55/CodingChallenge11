@@ -38,5 +38,5 @@ bar.on("mouseover", function(event, d) {
     d3.select(this).select("rect").attr("fill", "orange");
 })
 .on("mouseout", function(event, d) {
-    d3.select(this).select("rect").attr("fill", "steelblue");
+    d3.select(this).select("rect").attr("fill", "150, 127, 241");
 });
