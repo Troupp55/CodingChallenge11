@@ -30,7 +30,7 @@ bar.append("rect")
     .attr("width", d => x(d));
 
 bar.append("text")
-    .attr("x", d => x(d) - 10) // Add margin by subtracting 10
+    .attr("x", d => x(d) - 25) // Add margin by subtracting 20
     .attr("y", barHeight / 2)
     .attr("dy", ".35em")
     .text(d => d);
